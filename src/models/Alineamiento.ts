@@ -1,6 +1,6 @@
-import { ODS } from './ODS.js'
-import { PND } from './PND.js'
-import { GAD } from './GAD.js'
+import { ODS } from './ODS.js';
+import { PND } from './PND.js';
+import { GAD } from './GAD.js';
 
 export interface IAmbitoPrioritario {
     nombre: string,

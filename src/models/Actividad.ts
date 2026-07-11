@@ -1,4 +1,4 @@
-import { IActividad } from '../interfaces/IActividad.js'
+import { IActividad } from '../interfaces/IActividad.js';
 
 export class Actividad implements IActividad {
     private _id: string;

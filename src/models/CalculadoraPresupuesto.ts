@@ -1,4 +1,4 @@
-import {IPresupuesto} from '../interfaces/IPresupuesto.js'
+import {IPresupuesto} from '../interfaces/IPresupuesto.js';
 
 export class CalculadoraPresupuesto implements IPresupuesto{
     public calcularSubtotal(cantidad: number, valorUnitaro: number): number {
