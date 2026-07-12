@@ -4,13 +4,19 @@ type RutaHandler = (params: Record<string, string>) => IView;
 
 export class Router {
   private static instancia: Router;
-  private rutas: { patron: RegExp; nombres: string[]; handler: RutaHandler }[] = [];
+  private rutas: {
+    patron: RegExp;
+    nombres: string[];
+    handler: RutaHandler;
+  }[] = [];
+
   private contenedor: HTMLElement;
   private vistaActual: IView | null = null;
   private rutaPorDefecto = "#/dashboard";
 
   private constructor(contenedor: HTMLElement) {
     this.contenedor = contenedor;
+
     window.addEventListener("hashchange", () => this.resolver());
   }
 
@@ -18,6 +24,7 @@ export class Router {
     if (!Router.instancia) {
       Router.instancia = new Router(contenedor);
     }
+
     return Router.instancia;
   }
 
@@ -27,6 +34,7 @@ export class Router {
 
   public registrar(ruta: string, handler: RutaHandler): void {
     const nombres: string[] = [];
+
     const patronStr = ruta
       .split("/")
       .map((segmento) => {
@@ -34,10 +42,16 @@ export class Router {
           nombres.push(segmento.substring(1));
           return "([^/]+)";
         }
+
         return segmento.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       })
       .join("/");
-    this.rutas.push({ patron: new RegExp(`^${patronStr}$`), nombres, handler });
+
+    this.rutas.push({
+      patron: new RegExp(`^${patronStr}$`),
+      nombres,
+      handler,
+    });
   }
 
   public navegar(ruta: string): void {
@@ -52,67 +66,47 @@ export class Router {
     }
   }
 
-<<<<<<< HEAD
   private resolver(): void {
     const hash = window.location.hash || this.rutaPorDefecto;
+
     for (const ruta of this.rutas) {
       const match = hash.match(ruta.patron);
+
       if (match) {
         const params: Record<string, string> = {};
-        ruta.nombres.forEach((nombre, i) => (params[nombre] = match[i + 1]));
+
+        ruta.nombres.forEach((nombre, i) => {
+          params[nombre] = match[i + 1];
+        });
+
         this.renderizar(ruta.handler(params));
         this.marcarEnlaceActivo(hash);
+
         return;
       }
-=======
-    public navegar(ruta:string): void {
-        window.location.hash = ruta;
->>>>>>> rescue-branch
     }
+
     window.location.hash = this.rutaPorDefecto;
   }
 
   private renderizar(vista: IView): void {
-    if (this.vistaActual?.destroy) this.vistaActual.destroy();
+    if (this.vistaActual?.destroy) {
+      this.vistaActual.destroy();
+    }
+
     this.contenedor.innerHTML = "";
     this.contenedor.appendChild(vista.render());
     this.vistaActual = vista;
   }
 
-<<<<<<< HEAD
   private marcarEnlaceActivo(hash: string): void {
-    document.querySelectorAll<HTMLAnchorElement>(".sidebar-link").forEach((a) => {
-      a.classList.toggle("activo", a.getAttribute("href") === hash);
-    });
+    document
+      .querySelectorAll<HTMLAnchorElement>(".sidebar-link")
+      .forEach((a) => {
+        a.classList.toggle(
+          "activo",
+          a.getAttribute("href") === hash
+        );
+      });
   }
 }
-=======
-    private resolver(): void {
-        const hash = window.location.hash || this.rutaPorDefecto;
-        for (const ruta of this.rutas){
-            const match = hash.match(ruta.patron);
-            if(match){
-                const params: Record<string,string> = {};
-                ruta.nombres.forEach((nombre,i) => (params[nombre] = match[i+1]));
-                this.renderizar(ruta.handler(params));
-                this.marcarEnlaceActivo(hash);
-                return;
-            }
-        }
-        window.location.hash = this.rutaPorDefecto;
-    }
-
-    private renderizar(vista:IView): void {
-        if(this.vistaActual?.destroy) this.vistaActual.destroy();
-        this.contenedor.innerHTML = "";
-        this.contenedor.appendChild(vista.render());
-        this.vistaActual = vista;
-    }
-
-    private marcarEnlaceActivo(hash : string): void {
-        document.querySelectorAll<HTMLAnchorElement>(".sidebar-link").forEach((a) => {
-            a.classList.toggle("activo",a.getAttribute("href") === hash);
-        })
-    }
-}
->>>>>>> rescue-branch

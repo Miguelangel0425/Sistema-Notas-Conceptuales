@@ -10,17 +10,10 @@ export class ParserUtils {
     return match ? match[1] : "";
   }
 
-<<<<<<< HEAD
   public static obtenerNumeroOE(textoSeleccionado: string): string {
     const match = textoSeleccionado.match(/OE(\d+)/i);
     return match ? match[1] : "";
   }
-=======
-    public static obtenerNumeroOE(textoSeleccionado: string): string {
-        const match = textoSeleccionado.match(/(OE\d+)/i);
-        return match ? match[1] : "";
-    }
->>>>>>> rescue-branch
 
   public static obtenerNumeroPND(textoSeleccionado: string): string {
     const match = textoSeleccionado.match(/^(\d+)\./);
@@ -32,8 +25,13 @@ export class ParserUtils {
     return match ? match[1] : "";
   }
 
-  /** Devuelve el primer código disponible de un arreglo de opciones (usado al recargar hijos). */
-  public static obtenerPrimerCodigo<T extends { codigo: string }>(opciones: T[]): string {
+  /**
+   * Devuelve el primer código disponible de un arreglo de opciones.
+   * Usado al recargar hijos.
+   */
+  public static obtenerPrimerCodigo<T extends { codigo: string }>(
+    opciones: T[]
+  ): string {
     return opciones.length > 0 ? opciones[0].codigo : "";
   }
 }
