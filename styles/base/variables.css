@@ -1,42 +1,43 @@
 :root {
-    --color-primario: #0b3d63;
-    --color-primario-claro: #144d7a;
-    --color-primario-oscuro: #072741;
-    --color-dorado: #c9a227;
-    --color-dorado-claro: #e0bf4f;
-    --color-verde-oliva: #4a5d23;
+  /* Colores institucionales (paleta militar-académica: azul marino, dorado, verde oliva) */
+  --color-primario: #0b3d63;
+  --color-primario-claro: #144d7a;
+  --color-primario-oscuro: #072741;
+  --color-dorado: #c9a227;
+  --color-dorado-claro: #e0bf4f;
+  --color-verde-oliva: #4a5d23;
 
-    --color-fondo: #f4f6f9;
-    --color-superficie: #ffffff;
-    --color-borde: #e1e6ec;
-    --color-texto: #1e2937;
-    --color-texto-suave: #5b6b7c;
+  --color-fondo: #f4f6f9;
+  --color-superficie: #ffffff;
+  --color-borde: #e1e6ec;
+  --color-texto: #1e2937;
+  --color-texto-suave: #5b6b7c;
 
-    --color-exito: #1e7e34;
-    --color-exito-fondo: #e6f4ea;
-    --color-error: #b3261e;
-    --color-error-fondo: #fbeaea;
-    --color-advertencia: #a15c00;
-    --color-advertencia-fondo: #fdf1e0;
-    --color-info: #144d7a;
-    --color-info-fondo: #e6eef5;
+  --color-exito: #1e7e34;
+  --color-exito-fondo: #e6f4ea;
+  --color-error: #b3261e;
+  --color-error-fondo: #fbeaea;
+  --color-advertencia: #a15c00;
+  --color-advertencia-fondo: #fdf1e0;
+  --color-info: #144d7a;
+  --color-info-fondo: #e6eef5;
 
-    --radio-sm: 6px;
-    --radio-md: 10px;
-    --radio-lg: 16px;
+  --radio-sm: 6px;
+  --radio-md: 10px;
+  --radio-lg: 16px;
 
-    --sombra-sm: 0 1px 3px rgba(11, 61, 99, 0.08);
-    --sombra-md: 0 4px 14px rgba(11, 61, 99, 0.1);
-    --sombra-lg: 0 10px 30px rgba(11, 61, 99, 0.14);
+  --sombra-sm: 0 1px 3px rgba(11, 61, 99, 0.08);
+  --sombra-md: 0 4px 14px rgba(11, 61, 99, 0.1);
+  --sombra-lg: 0 10px 30px rgba(11, 61, 99, 0.14);
 
-    --espaciado-xs: 4px;
-    --espaciado-sm: 8px;
-    --espaciado-md: 16px;
-    --espaciado-lg: 24px;
-    --espaciado-xl: 32px;
+  --espaciado-xs: 4px;
+  --espaciado-sm: 8px;
+  --espaciado-md: 16px;
+  --espaciado-lg: 24px;
+  --espaciado-xl: 32px;
 
-    --fuente-base: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fuente-base: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-    --transicion-rapida: 0.15s ease;
-    --transicion-normal: 0.25s ease;
+  --transicion-rapida: 0.15s ease;
+  --transicion-normal: 0.25s ease;
 }

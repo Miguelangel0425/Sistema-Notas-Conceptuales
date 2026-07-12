@@ -1,4 +1,4 @@
-export interface IView{
-    render(): HTMLElement;
-    destroy?():void;
+export interface IView {
+  render(): HTMLElement;
+  destroy?(): void;
 }

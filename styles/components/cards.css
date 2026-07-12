@@ -56,26 +56,9 @@
   color: var(--color-texto-suave);
 }
 
-.tarjeta-azul {
-  border-left-color: var(--color-primario);
-}
-
-.tarjeta-morado {
-  border-left-color: #6a4c93;
-}
-
-.tarjeta-verde {
-  border-left-color: var(--color-exito);
-}
-
-.tarjeta-dorado {
-  border-left-color: var(--color-dorado);
-}
-
-.tarjeta-rojo {
-  border-left-color: var(--color-error);
-}
-
-.tarjeta-naranja {
-  border-left-color: var(--color-advertencia);
-}
+.tarjeta-azul { border-left-color: var(--color-primario); }
+.tarjeta-morado { border-left-color: #6a4c93; }
+.tarjeta-verde { border-left-color: var(--color-exito); }
+.tarjeta-dorado { border-left-color: var(--color-dorado); }
+.tarjeta-rojo { border-left-color: var(--color-error); }
+.tarjeta-naranja { border-left-color: var(--color-advertencia); }

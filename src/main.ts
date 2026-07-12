@@ -9,24 +9,24 @@ import { ReporteController } from "./controllers/ReporteController.js";
 import { SeedService } from "./services/SeedService.js";
 
 function iniciarAplicacion(): void {
-    const raiz = document.getElementById("app");
-    if (!raiz) {
-        throw new Error('No se encontró el elemento raíz "#app" en index.html.');
-    }
+  const raiz = document.getElementById("app");
+  if (!raiz) {
+    throw new Error('No se encontró el elemento raíz "#app" en index.html.');
+  }
 
-    SeedService.ejecutar();
+  SeedService.ejecutar();
 
-    const appRoot = new ShellView().montar(raiz);
-    const router = Router.inicializar(appRoot);
+  const appRoot = new ShellView().montar(raiz);
+  const router = Router.inicializar(appRoot);
 
-    new DashboardController().registrarRutas(router);
-    new ConvocatoriaController().registrarRutas(router);
-    new DirectorController().registrarRutas(router);
-    new NotaConceptualController().registrarRutas(router);
-    new ConsultaController().registrarRutas(router);
-    new ReporteController().registrarRutas(router);
+  new DashboardController().registrarRutas(router);
+  new ConvocatoriaController().registrarRutas(router);
+  new DirectorController().registrarRutas(router);
+  new NotaConceptualController().registrarRutas(router);
+  new ConsultaController().registrarRutas(router);
+  new ReporteController().registrarRutas(router);
 
-    router.iniciar();
+  router.iniciar();
 }
 
 document.addEventListener("DOMContentLoaded", iniciarAplicacion);

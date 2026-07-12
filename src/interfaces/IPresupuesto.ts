@@ -1,4 +1,4 @@
-export interface IPresupuesto{
-    calcularSubtotal(cantidad:number, valorUnitaro:number):number;
-    calcularTotalGeneral(subtotales: number[]):number;
+export interface IPresupuesto {
+  calcularSubtotal(cantidad: number, valorUnitario: number): number;
+  calcularTotalGeneral(subtotales: number[]): number;
 }

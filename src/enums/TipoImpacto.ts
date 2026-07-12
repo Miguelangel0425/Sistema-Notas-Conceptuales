@@ -4,10 +4,10 @@ export enum TipoImpacto {
   POLITICO = "POLITICO",
   CIENTIFICO = "CIENTIFICO",
   AMBIENTAL = "AMBIENTAL",
-  OTROS = "OTROS"
+  OTROS = "OTROS",
 }
 
-/** Descripciones base tal como constan en el Anexo 1, sección "IMPACTOS ESPERADOS". */
+/** Descripciones base tal como constan literalmente en el Anexo 1, sección "IMPACTOS ESPERADOS". */
 export const DESCRIPCION_BASE_IMPACTO: Record<TipoImpacto, string> = {
   [TipoImpacto.ECONOMICO]:
     "Mejoramiento de condiciones económicas de la población objetivo.",

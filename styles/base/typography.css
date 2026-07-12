@@ -1,41 +1,38 @@
-h1,
-h2,
-h3,
-h4 {
-    font-weight: 600;
-    color: var(--color-primario-oscuro);
-    line-height: 1.25;
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--color-primario-oscuro);
+  line-height: 1.25;
 }
 
 .vista-titulo {
-    font-size: 1.5rem;
-    color: var(--color-primario-oscuro);
+  font-size: 1.5rem;
+  color: var(--color-primario-oscuro);
 }
 
 .seccion-titulo {
-    font-size: 1.05rem;
-    color: var(--color-primario);
-    padding-bottom: var(--espaciado-sm);
-    border-bottom: 2px solid var(--color-dorado);
-    margin-bottom: var(--espaciado-md);
+  font-size: 1.05rem;
+  color: var(--color-primario);
+  padding-bottom: var(--espaciado-sm);
+  border-bottom: 2px solid var(--color-dorado);
+  margin-bottom: var(--espaciado-md);
 }
 
 label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-texto-suave);
-    display: block;
-    margin-bottom: var(--espaciado-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+  display: block;
+  margin-bottom: var(--espaciado-xs);
 }
 
 .obligatorio {
-    color: var(--color-error);
+  color: var(--color-error);
 }
 
 .mensaje-error {
-    display: block;
-    color: var(--color-error);
-    font-size: 0.78rem;
-    margin-top: 2px;
-    min-height: 1em;
+  display: block;
+  color: var(--color-error);
+  font-size: 0.78rem;
+  margin-top: 2px;
+  min-height: 1em;
 }

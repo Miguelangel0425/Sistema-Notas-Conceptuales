@@ -88,43 +88,42 @@ Las listas "padre" del Anexo 1 (17 ODS, 11 campos CINE amplios, 9 objetivos PND,
 
 ## 12. Cómo ejecutar
 
-### Opción A — Docker Hub (construir, publicar y ejecutar sin compose)
+### Opción A — Docker Hub / Docker (construir y ejecutar)
 
 ```bash
 # 1. Construir la imagen (desde la raíz del proyecto, donde está el Dockerfile)
-docker build -t m3nm4/signc-notas-conceptuales:1.0 .
+docker build -t m3m4/signc-notas-conceptuales:1.0 .
 
-# 2. Iniciar sesión en Docker Hub
+# 2. Iniciar sesión en Docker Hub (opcional, solo si vas a publicarla)
 docker login
 
-# 3. Publicar la imagen
+# 3. Publicar la imagen (opcional)
 docker push m3nm4/signc-notas-conceptuales:1.0
 
-# 4. Ejecutar (en esta u otra máquina, sin necesitar el código fuente)
+# 4. Ejecutar
 docker run -d --name signc -p 8080:80 --restart unless-stopped m3nm4/signc-notas-conceptuales:1.0
 ```
 
-Reemplaza `m3nm4` por tu usuario real de Docker Hub. Abre `http://localhost:8080`.
+Reemplaza `m3nm4` por tu usuario real de Docker Hub (o cualquier nombre local si no vas a publicarla). Abre `http://localhost:8080`.
 
 Comandos útiles:
 ```bash
 docker ps                     # ver que el contenedor está corriendo
 docker logs -f signc          # ver logs de nginx
 docker stop signc && docker rm signc   # detenerlo y eliminarlo
-docker pull TU_USUARIO_DOCKERHUB/signc-notas-conceptuales:1.0   # en otra máquina, solo con la imagen publicada
+docker pull m3nm4/signc-notas-conceptuales:1.0   # en otra máquina, solo con la imagen publicada
 ```
 
-El `Dockerfile` es multi-stage: compila TypeScript con Node 20 en la primera etapa y sirve los archivos estáticos con `nginx:alpine` en la segunda — la imagen final **no contiene Node ni el código fuente**, solo HTML/CSS/JS compilado + nginx. El `nginx.conf` incluido sirve los módulos ES con el `Content-Type` correcto y resuelve el hash-routing de la SPA.
-
-### Opción B — Docker Compose (alternativa local, un solo comando)
-
+Después de cualquier cambio de código hay que reconstruir la imagen:
 ```bash
-docker compose up --build
+docker build -t m3nm4/signc-notas-conceptuales:1.0 .
+docker stop signc && docker rm signc
+docker run -d --name signc -p 8080:80 --restart unless-stopped m3nm4/signc-notas-conceptuales:1.0
 ```
 
-Abre `http://localhost:8080`. Útil para desarrollo local; internamente usa el mismo `Dockerfile`.
+El `Dockerfile` es multi-stage: compila TypeScript con Node 20 en la primera etapa y sirve los archivos estáticos con `nginx:alpine` en la segunda — la imagen final **no contiene Node ni el código fuente**, solo HTML/CSS/JS compilado + nginx. El `nginx.conf` incluido resuelve el hash-routing de la SPA.
 
-### Opción C — Node local (sin Docker)
+### Opción B — Node local (sin Docker)
 
 Requiere Node.js solo para compilar (no hay backend en tiempo de ejecución).
 
