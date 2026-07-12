@@ -271,3 +271,10 @@ La arquitectura separa las responsabilidades entre modelos, servicios, validador
 Los datos son almacenados exclusivamente en memoria, por lo que se reinician al recargar completamente la aplicación.
 
 El proyecto implementa las reglas de negocio, validaciones, cálculos automáticos y listas en cascada necesarias para digitalizar el proceso de registro y gestión de Notas Conceptuales de la Convocatoria 2026.
+
+## 14. Capturas de la Ejecución en Consola
+<img width="1002" height="727" alt="image" src="https://github.com/user-attachments/assets/c483cbbf-b3db-47c6-be87-0aa041b12dde" />
+<img width="956" height="621" alt="image" src="https://github.com/user-attachments/assets/5f781c7b-d3c3-4e2c-a9a1-3de0f3df0873" />
+<img width="921" height="592" alt="image" src="https://github.com/user-attachments/assets/cd112737-f327-4d61-8c18-dfa0f196c995" />
+
+
