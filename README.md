@@ -88,11 +88,19 @@ Las listas "padre" del Anexo 1 (17 ODS, 11 campos CINE amplios, 9 objetivos PND,
 
 ## 12. Cómo ejecutar
 
+<<<<<<< HEAD
 ### Opción A — Docker Hub / Docker (construir y ejecutar)
 
 ```bash
 # 1. Construir la imagen (desde la raíz del proyecto, donde está el Dockerfile)
 docker build -t m3m4/signc-notas-conceptuales:1.0 .
+=======
+### Opción A — Docker Hub / Docker (construir y ejecutar, sin compose)
+
+```bash
+# 1. Construir la imagen (desde la raíz del proyecto, donde está el Dockerfile)
+docker build -t m3nm4/signc-notas-conceptuales:1.0 .
+>>>>>>> rescue-branch
 
 # 2. Iniciar sesión en Docker Hub (opcional, solo si vas a publicarla)
 docker login
@@ -104,7 +112,11 @@ docker push m3nm4/signc-notas-conceptuales:1.0
 docker run -d --name signc -p 8080:80 --restart unless-stopped m3nm4/signc-notas-conceptuales:1.0
 ```
 
+<<<<<<< HEAD
 Reemplaza `m3nm4` por tu usuario real de Docker Hub (o cualquier nombre local si no vas a publicarla). Abre `http://localhost:8080`.
+=======
+Abre `http://localhost:8080`.
+>>>>>>> rescue-branch
 
 Comandos útiles:
 ```bash
@@ -130,7 +142,7 @@ Requiere Node.js solo para compilar (no hay backend en tiempo de ejecución).
 ```bash
 npm install         # instala TypeScript como devDependency
 npm run build        # compila src/ -> dist/ con tsc
-npm run serve         # sirve el proyecto estático en http://localhost:5500
+npm run serve         # sirve el proyecto estático en http://localhost:8080
 ```
 
 > ⚠️ **No abras `index.html` con doble clic.** Los navegadores bloquean los módulos ES (`<script type="module">`) bajo el protocolo `file://` por política CORS — siempre debe servirse por HTTP (Docker, `npm run serve`, `python3 -m http.server`, o la extensión Live Server de VS Code).

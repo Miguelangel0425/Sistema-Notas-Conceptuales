@@ -52,6 +52,7 @@ export class Router {
     }
   }
 
+<<<<<<< HEAD
   private resolver(): void {
     const hash = window.location.hash || this.rutaPorDefecto;
     for (const ruta of this.rutas) {
@@ -63,6 +64,10 @@ export class Router {
         this.marcarEnlaceActivo(hash);
         return;
       }
+=======
+    public navegar(ruta:string): void {
+        window.location.hash = ruta;
+>>>>>>> rescue-branch
     }
     window.location.hash = this.rutaPorDefecto;
   }
@@ -74,9 +79,40 @@ export class Router {
     this.vistaActual = vista;
   }
 
+<<<<<<< HEAD
   private marcarEnlaceActivo(hash: string): void {
     document.querySelectorAll<HTMLAnchorElement>(".sidebar-link").forEach((a) => {
       a.classList.toggle("activo", a.getAttribute("href") === hash);
     });
   }
 }
+=======
+    private resolver(): void {
+        const hash = window.location.hash || this.rutaPorDefecto;
+        for (const ruta of this.rutas){
+            const match = hash.match(ruta.patron);
+            if(match){
+                const params: Record<string,string> = {};
+                ruta.nombres.forEach((nombre,i) => (params[nombre] = match[i+1]));
+                this.renderizar(ruta.handler(params));
+                this.marcarEnlaceActivo(hash);
+                return;
+            }
+        }
+        window.location.hash = this.rutaPorDefecto;
+    }
+
+    private renderizar(vista:IView): void {
+        if(this.vistaActual?.destroy) this.vistaActual.destroy();
+        this.contenedor.innerHTML = "";
+        this.contenedor.appendChild(vista.render());
+        this.vistaActual = vista;
+    }
+
+    private marcarEnlaceActivo(hash : string): void {
+        document.querySelectorAll<HTMLAnchorElement>(".sidebar-link").forEach((a) => {
+            a.classList.toggle("activo",a.getAttribute("href") === hash);
+        })
+    }
+}
+>>>>>>> rescue-branch

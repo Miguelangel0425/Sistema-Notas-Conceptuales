@@ -10,10 +10,17 @@ export class ParserUtils {
     return match ? match[1] : "";
   }
 
+<<<<<<< HEAD
   public static obtenerNumeroOE(textoSeleccionado: string): string {
     const match = textoSeleccionado.match(/OE(\d+)/i);
     return match ? match[1] : "";
   }
+=======
+    public static obtenerNumeroOE(textoSeleccionado: string): string {
+        const match = textoSeleccionado.match(/(OE\d+)/i);
+        return match ? match[1] : "";
+    }
+>>>>>>> rescue-branch
 
   public static obtenerNumeroPND(textoSeleccionado: string): string {
     const match = textoSeleccionado.match(/^(\d+)\./);
