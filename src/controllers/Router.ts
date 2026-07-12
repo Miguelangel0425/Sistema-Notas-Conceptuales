@@ -41,7 +41,7 @@ export class Router {
     }
 
     public navegar(ruta:string): void {
-        window.location.hash = this.rutaPorDefecto;
+        window.location.hash = ruta;
     }
 
     public iniciar(): void {
@@ -61,6 +61,7 @@ export class Router {
                 ruta.nombres.forEach((nombre,i) => (params[nombre] = match[i+1]));
                 this.renderizar(ruta.handler(params));
                 this.marcarEnlaceActivo(hash);
+                return;
             }
         }
         window.location.hash = this.rutaPorDefecto;

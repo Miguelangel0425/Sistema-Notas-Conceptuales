@@ -62,7 +62,9 @@ export const CINE_ESPECIFICO_POR_AMPLIO: Record<string, ICineOpcion[]> = {
     ],
     "10": [
         { codigo: "101", texto: "101 Servicios personales" },
+        { codigo: "102", texto: "102 Servicios de higiene y salud ocupacional" },
         { codigo: "103", texto: "103 Servicios de seguridad" },
+        { codigo: "104", texto: "104 Servicios de transporte" },
     ],
 };
 

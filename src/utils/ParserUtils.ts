@@ -12,7 +12,7 @@ export class ParserUtils {
     }
 
     public static obtenerNumeroOE(textoSeleccionado: string): string {
-        const match = textoSeleccionado.match(/OE\d+/i);
+        const match = textoSeleccionado.match(/(OE\d+)/i);
         return match ? match[1] : "";
     }
 
