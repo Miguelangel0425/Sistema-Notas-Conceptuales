@@ -92,19 +92,19 @@ Las listas "padre" del Anexo 1 (17 ODS, 11 campos CINE amplios, 9 objetivos PND,
 
 ```bash
 # 1. Construir la imagen (desde la raíz del proyecto, donde está el Dockerfile)
-docker build -t TU_USUARIO_DOCKERHUB/signc-notas-conceptuales:1.0 .
+docker build -t m3nm4/signc-notas-conceptuales:1.0 .
 
 # 2. Iniciar sesión en Docker Hub
 docker login
 
 # 3. Publicar la imagen
-docker push TU_USUARIO_DOCKERHUB/signc-notas-conceptuales:1.0
+docker push m3nm4/signc-notas-conceptuales:1.0
 
 # 4. Ejecutar (en esta u otra máquina, sin necesitar el código fuente)
-docker run -d --name signc -p 5500:80 --restart unless-stopped TU_USUARIO_DOCKERHUB/signc-notas-conceptuales:1.0
+docker run -d --name signc -p 8080:80 --restart unless-stopped m3nm4/signc-notas-conceptuales:1.0
 ```
 
-Reemplaza `TU_USUARIO_DOCKERHUB` por tu usuario real de Docker Hub. Abre `http://localhost:5500`.
+Reemplaza `m3nm4` por tu usuario real de Docker Hub. Abre `http://localhost:8080`.
 
 Comandos útiles:
 ```bash
@@ -122,7 +122,7 @@ El `Dockerfile` es multi-stage: compila TypeScript con Node 20 en la primera eta
 docker compose up --build
 ```
 
-Abre `http://localhost:5500`. Útil para desarrollo local; internamente usa el mismo `Dockerfile`.
+Abre `http://localhost:8080`. Útil para desarrollo local; internamente usa el mismo `Dockerfile`.
 
 ### Opción C — Node local (sin Docker)
 
