@@ -1,0 +1,89 @@
+.tabla-elegante {
+  width: 100%;
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.tabla-elegante thead th {
+  background: var(--color-primario);
+  color: #fff;
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tabla-elegante tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-borde);
+  color: var(--color-texto);
+}
+
+.tabla-elegante tbody tr:hover {
+  background: var(--color-fondo);
+}
+
+.tabla-elegante tbody tr.fila-totales {
+  background: var(--color-info-fondo);
+  font-weight: 700;
+}
+
+.tabla-vacia {
+  color: var(--color-texto-suave);
+  font-style: italic;
+  padding: var(--espaciado-md) 0;
+  text-align: center;
+}
+
+.texto-descripcion-base {
+  font-size: 0.78rem;
+  color: var(--color-texto-suave);
+  font-style: italic;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-registrada {
+  background: var(--color-info-fondo);
+  color: var(--color-info);
+}
+
+.badge-en_revision {
+  background: var(--color-advertencia-fondo);
+  color: var(--color-advertencia);
+}
+
+.badge-aprobada {
+  background: var(--color-exito-fondo);
+  color: var(--color-exito);
+}
+
+.badge-rechazada {
+  background: var(--color-error-fondo);
+  color: var(--color-error);
+}
+
+.badge-abierta {
+  background: var(--color-exito-fondo);
+  color: var(--color-exito);
+}
+
+.badge-cerrada {
+  background: var(--color-advertencia-fondo);
+  color: var(--color-advertencia);
+}
+
+.badge-vencida {
+  background: var(--color-error-fondo);
+  color: var(--color-error);
+}

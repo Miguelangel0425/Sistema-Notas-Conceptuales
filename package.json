@@ -1,0 +1,13 @@
+{
+    "name": "sistema-gestion-notas-conceptuales",
+    "version": "1.0.0",
+    "description": "Sistema de Gestión de Convocatoria de Notas Conceptuales — HTML5, CSS3 y TypeScript puro.",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch",
+        "serve": "npx --yes serve -l 5500 ."
+    },
+    "devDependencies": {
+        "typescript": "^5.4.0"
+    }
+}

@@ -1,10 +1,10 @@
 export enum TipoImpacto {
-    ECONOMICO = "ECONOMICO",
-    SOCIAL = "SOCIAL",
-    POLITICO = "POLITICO",
-    CIENTIFICO = "CIENTIFICO",
-    AMBIENTAL = "AMBIENTAL",
-    OTROS = "OTROS"
+  ECONOMICO = "ECONOMICO",
+  SOCIAL = "SOCIAL",
+  POLITICO = "POLITICO",
+  CIENTIFICO = "CIENTIFICO",
+  AMBIENTAL = "AMBIENTAL",
+  OTROS = "OTROS"
 }
 
 /** Descripciones base tal como constan en el Anexo 1, sección "IMPACTOS ESPERADOS". */
@@ -21,4 +21,13 @@ export const DESCRIPCION_BASE_IMPACTO: Record<TipoImpacto, string> = {
     "Efecto generado por las buenas prácticas de políticas ambientales determinados durante la implementación de proyectos sociales en el territorio.",
   [TipoImpacto.OTROS]:
     "Otros posibles impactos que el proyecto podría generar al finalizar la ejecución.",
+};
+
+export const ETIQUETAS_TIPO_IMPACTO: Record<TipoImpacto, string> = {
+  [TipoImpacto.ECONOMICO]: "Impacto económico",
+  [TipoImpacto.SOCIAL]: "Impacto social",
+  [TipoImpacto.POLITICO]: "Impacto político",
+  [TipoImpacto.CIENTIFICO]: "Impacto científico",
+  [TipoImpacto.AMBIENTAL]: "Impacto ambiental",
+  [TipoImpacto.OTROS]: "Otros impactos",
 };

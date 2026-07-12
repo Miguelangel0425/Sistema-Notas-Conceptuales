@@ -1,1 +1,30 @@
-dist/*
+# Dependencias
+node_modules/
+
+# Salida de compilación de TypeScript
+dist/
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores / IDE
+.vscode/
+.idea/
+*.swp
+
+# Variables de entorno (por si en el futuro se agregan)
+.env
+.env.local
+
+# Docker
+*.pid
+
+# Archivos temporales
+*.tmp

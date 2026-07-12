@@ -1,0 +1,81 @@
+.card {
+  background: var(--color-superficie);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-sm);
+  padding: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-lg);
+  border: 1px solid var(--color-borde);
+}
+
+.subseccion {
+  margin-top: var(--espaciado-lg);
+  padding-top: var(--espaciado-md);
+  border-top: 1px dashed var(--color-borde);
+}
+
+.subseccion h4 {
+  font-size: 0.95rem;
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-sm);
+}
+
+.tarjeta {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-md);
+  background: var(--color-superficie);
+  border-radius: var(--radio-lg);
+  padding: var(--espaciado-lg);
+  box-shadow: var(--sombra-sm);
+  border-left: 5px solid var(--color-primario);
+  transition: transform var(--transicion-normal), box-shadow var(--transicion-normal);
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-md);
+}
+
+.tarjeta-icono {
+  font-size: 1.8rem;
+}
+
+.tarjeta-cuerpo {
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-valor {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primario-oscuro);
+}
+
+.tarjeta-etiqueta {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.tarjeta-azul {
+  border-left-color: var(--color-primario);
+}
+
+.tarjeta-morado {
+  border-left-color: #6a4c93;
+}
+
+.tarjeta-verde {
+  border-left-color: var(--color-exito);
+}
+
+.tarjeta-dorado {
+  border-left-color: var(--color-dorado);
+}
+
+.tarjeta-rojo {
+  border-left-color: var(--color-error);
+}
+
+.tarjeta-naranja {
+  border-left-color: var(--color-advertencia);
+}
