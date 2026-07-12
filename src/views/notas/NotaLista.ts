@@ -67,7 +67,7 @@ export class NotaListaView implements IView {
             const r = this.servicio.eliminar(n.id);
             if (r.valido) {
               Alerta.exito("Nota conceptual eliminada.");
-              Router.obtenerInstancia().navegar("#/notas");
+              Router.obtenerInstancia().refrescar();
             } else Alerta.error(r.mensaje ?? "No se pudo eliminar.");
           });
         });

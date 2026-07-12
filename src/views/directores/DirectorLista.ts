@@ -52,7 +52,7 @@ export class DirectorListaView implements IView {
             const r = this.servicio.eliminar(d.id);
             if (r.valido) {
               Alerta.exito("Director eliminado.");
-              Router.obtenerInstancia().navegar("#/directores");
+              Router.obtenerInstancia().refrescar();
             } else Alerta.error(r.mensaje ?? "No se pudo eliminar.");
           });
         });

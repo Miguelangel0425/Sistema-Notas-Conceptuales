@@ -58,6 +58,16 @@ export class Router {
     window.location.hash = ruta;
   }
 
+  /**
+   * Fuerza el re-render de la ruta actual sin depender del evento "hashchange".
+   * Necesario porque el navegador NO dispara "hashchange" cuando el hash nuevo
+   * es idéntico al actual (ej. eliminar un ítem desde la misma pantalla de
+   * listado en la que ya estás parado, y "navegar" de vuelta a esa misma ruta).
+   */
+  public refrescar(): void {
+    this.resolver();
+  }
+
   public iniciar(): void {
     if (!window.location.hash) {
       window.location.hash = this.rutaPorDefecto;

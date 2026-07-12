@@ -94,7 +94,7 @@ export class ConvocatoriaListaView implements IView {
 
           if (r.valido) {
             Alerta.exito("Convocatoria cerrada correctamente.");
-            Router.obtenerInstancia().navegar("#/convocatorias");
+            Router.obtenerInstancia().refrescar();
           } else {
             Alerta.error(r.mensaje ?? "No se pudo cerrar.");
           }
